@@ -2,7 +2,7 @@ class BillItem{
     item;
     qty;
     rate;
-    constructor(item,qty,rate){
+     constructor(item,qty,rate){
         this.item = item;
         this.qty = qty;
         this.rate = rate; 
