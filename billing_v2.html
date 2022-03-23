@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            
+            .main {
+                background-color: rgb(129, 178, 243);
+                max-width: 650px;
+                min-height: 50vh;
+                padding-left: 1vw;
+                padding-top:1vh;
+                margin : 0 0;
+            }
+            .cash-color {
+                background-color: rgb(224, 240, 240);
+                text-align: center;
+            }
+            .credit-color {
+                background-color: rgb(241, 234, 229);
+                text-align: center;
+            }
+            .main > input {
+                font-size: large;
+                padding: 1vh 0.5vw;
+                margin: 1vh 4vw 1vh 1vw;
+        /*        background-color: rgb(220, 226, 238);*/
+            }
+            .grid-container {
+              max-width: 600px;
+              margin-top: 29px;
+              display: grid;
+              gap:2px;
+              grid-template-columns: 40% 15% 15% 20% 9%;
+              background-color: #a0bed6;
+              padding:5px;
+            }
+            .grid-container>div {
+                background-color: aliceblue;
+                font-size: 120%;
+                padding-top: 1ch;
+                padding-bottom:1ch;
+            }
+            .heading {
+                font-size: 140%;
+                font-weight: bold;
+                text-align: center;
+            }
+            .num {
+                text-align:right;
+                padding-right:1ch;
+                font-size: 120%;
+            }
+            .item {
+                text-align: left;
+                padding-left: 1ch;
+                font-size: 120%;
+            }
+        </style>
+            
+</head>
+    <body>
+    <div class="main">
+        <input type="date" id="bDate" />
+        <input type="text" class="cash-color" size="6" value="Cash" id="ttype" onkeydown="chk(this,event)"/>
+        <br>
+        <input type="text" id="cName" size="30" />
+        <div class="grid-container" id="dgrid">
+            <div class='heading'>Particulars</div>
+            <div class='heading'>Quantity</div>
+            <div class='heading'>Rate</div>
+            <div class='heading'>Amount</div>
+            <div class='heading'>Action</div>
+
+            <div class="item" id="c1" onmouseover="chcolor(this,0)" onclick="mkEditable(this)" onmouseout="chcolor(this,1)" >Shirt</div>
+            <div class="num" id="c2" onmouseover="chcolor(this,0)" onclick="mkEditable(this)" onmouseout="chcolor(this,1)" >2</div>
+            <div class="num" id="c3" onmouseover="chcolor(this,0)" onclick="mkEditable(this)" onmouseout="chcolor(this,1)" >1100</div>
+            <div class="num" id="c4"></div>
+            <div class="num" id="d1"><input id="b1" style="font-size:150%;color:red;" type="button" value ="X" onclick="delRow(1)"/></div>
+ 
+        </div>
+    </div>
+    <script src="billGrid.js"></script>
+</body>
+</html>
+
