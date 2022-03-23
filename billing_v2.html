@@ -25,7 +25,7 @@
             }
             .main > input {
                 font-size: large;
-                padding: 1vh 0.5vw;
+                padding: 1vh 0.8vw;
                 margin: 1vh 4vw 1vh 1vw;
         /*        background-color: rgb(220, 226, 238);*/
             }
@@ -34,9 +34,17 @@
               margin-top: 29px;
               display: grid;
               gap:2px;
-              grid-template-columns: 40% 15% 15% 20% 9%;
+              grid-template-columns: 39% 15% 15% 20% 10%;
               background-color: #a0bed6;
               padding:5px;
+            }
+            .grid-container>.heading {
+                font-size: 130%;
+                font-weight: bold;
+                text-align: center;
+                background-color: rgb(106, 161, 233);
+                padding-top: 1ch;
+                padding-bottom:1ch;
             }
             .grid-container>div {
                 background-color: aliceblue;
@@ -44,11 +52,7 @@
                 padding-top: 1ch;
                 padding-bottom:1ch;
             }
-            .heading {
-                font-size: 140%;
-                font-weight: bold;
-                text-align: center;
-            }
+            
             .num {
                 text-align:right;
                 padding-right:1ch;
@@ -65,9 +69,10 @@
     <body>
     <div class="main">
         <input type="date" id="bDate" />
-        <input type="text" class="cash-color" size="6" value="Cash" id="ttype" onkeydown="chk(this,event)"/>
+        <input type="text" id="billNo" placeholder="Bill Number" size="10" />
+        <input type="text" class="cash-color" size="5" value="Cash" id="ttype" onkeydown="chk(this,event)"/>
         <br>
-        <input type="text" id="cName" size="30" />
+        <input type="text" id="cName" placeholder="Customer Name" size="51" />
         <div class="grid-container" id="dgrid">
             <div class='heading'>Particulars</div>
             <div class='heading'>Quantity</div>
@@ -84,6 +89,7 @@
         </div>
     </div>
     <script src="billGrid.js"></script>
+    <script src="classes.js"></script>
 </body>
 </html>
 
