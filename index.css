@@ -1,0 +1,122 @@
+body {
+    margin:0;
+    font-size: 1.2em;
+}
+.o-container {
+    width:100vw;
+    height:100vh;
+    display:grid;
+    margin:0;
+    gap:1vh;
+    grid-template-rows:auto 1fr auto;
+    background-color: darkslategray;
+}
+.header {
+    background-color: blueviolet;
+    font-size:xx-large;
+    color:white;
+    padding: 2vmin;
+}
+.footer {
+    background-color: black;
+    font-size:x-large;
+    color:white;
+    padding:2vmin;
+}
+.content {
+    background-color: #a0bed6;
+    position:relative;
+}
+.top-div {
+    z-index: 9;
+}
+.bill-container {
+    display:grid;
+    grid-template-rows: auto 1fr;
+    background-color: burlywood;
+    position :absolute;
+    min-width: 70%;
+    max-width: 70%;
+    min-height: 100%;
+    left :0%;
+    float:left;
+    position:relative;
+    
+}
+.bill-header{
+    background-color: rgb(129, 178, 243);
+    margin : 0 0;
+    top:0;
+    padding:2vmin;
+    font-size:2rem;
+}
+.grid-container {
+   max-width:850px;
+ display:grid;
+ grid-template-rows: auto 1fr;
+ padding-left: 2vmin;
+
+}
+.grid-header {
+    display:grid;
+    grid-template-columns: 39% 15% 15% 20% 10%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 1ch;
+    padding-bottom:0ch;
+    gap:1px;
+} 
+.grid-details {
+    display:grid;
+    grid-template-columns: 39% 15% 15% 20% 10%;
+    gap:1px;
+    grid-auto-rows: 3ch;
+
+}
+.grid-header>div {
+    background-color: rgb(93, 151, 228);
+    padding: 0.5ch;
+    max-height: 3ch;
+    top:0;
+}
+.grid-details>div {
+    background-color:rgb(124, 172, 236);
+    max-height: 3ch;
+    padding: 0.5ch;
+    
+
+}
+.bill-header > input {
+    font-size: 1.5rem;
+    padding: 1vh 0.6vw;
+    margin: 1vh 4vw 1vh 1vw;
+/*        background-color: rgb(220, 226, 238);*/
+}
+.num {
+    text-align:right;
+    padding-right:2ch;
+    
+}
+.item {
+    text-align: left;
+    padding-left: 1ch;
+}
+
+.billList {
+    background-color: aquamarine;
+    position: absolute;
+    min-width: 70%;
+    max-width: 70%;
+    min-height: 100%;
+    left: 30%;
+}
+
+.cash-color {
+    background-color: rgb(224, 240, 240);
+    text-align: center;
+}
+.credit-color {
+    background-color: rgb(241, 234, 229);
+    text-align: center;
+}

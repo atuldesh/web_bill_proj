@@ -18,7 +18,7 @@ function chcolor(c,n){
     if(n==0) {
         c.style.backgroundColor = "#FFAAFF";
     } else {
-        c.style.backgroundColor = 'aliceblue';
+        c.style.backgroundColor = 'rgb(124, 172, 236)';
     } 
 }
 function chk(tbox,e){
@@ -221,7 +221,7 @@ function addRow(){
     let ncol4=document.createElement('div');
     ncol4.id=id5;ncol4.classList.add('num');
     ncol4.innerHTML="X";
-    let delButton = '<input id="b'+(rno+1)+'" style="font-size:150%;color:red;" type="button" value ="X" onclick="delRow('+(rno+1)+')"/>';
+    let delButton = '<input id="b'+(rno+1)+'" style="font-size:100%;color:red;" type="button" value ="X" onclick="delRow('+(rno+1)+')"/>';
 
     ncol4.innerHTML=delButton;
     g.appendChild(ncol4);

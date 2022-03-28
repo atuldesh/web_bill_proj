@@ -15,6 +15,14 @@
                 padding-top:1vh;
                 margin : 0 0;
             }
+            .billMain{
+                background-color: rgb(129, 178, 243);
+                padding-left: 1vw;
+                padding-top:1vh;
+                margin : 0 0;
+                top:0;
+                position:fixed;
+            }
             .cash-color {
                 background-color: rgb(224, 240, 240);
                 text-align: center;
@@ -23,7 +31,7 @@
                 background-color: rgb(241, 234, 229);
                 text-align: center;
             }
-            .main > input {
+            .billMain > input {
                 font-size: large;
                 padding: 1vh 0.8vw;
                 margin: 1vh 4vw 1vh 1vw;
@@ -31,7 +39,7 @@
             }
             .grid-container {
               max-width: 600px;
-              margin-top: 29px;
+              margin-top: 149px;
               display: grid;
               gap:2px;
               grid-template-columns: 39% 15% 15% 20% 10%;
@@ -68,11 +76,14 @@
 </head>
     <body>
     <div class="main">
-        <input type="date" id="bDate" />
-        <input type="text" id="billNo" placeholder="Bill Number" size="10" />
-        <input type="text" class="cash-color" size="5" value="Cash" id="ttype" onkeydown="chk(this,event)"/>
-        <br>
-        <input type="text" id="cName" placeholder="Customer Name" size="51" />
+        <div class="billMain">
+            <input type="date" id="bDate" />
+            <input type="text" id="billNo" placeholder="Bill Number" size="10" />
+            <input type="text" class="cash-color" size="5" value="Cash" id="ttype" onkeydown="chk(this,event)"/>
+            <br>
+            <input type="text" id="cName" placeholder="Customer Name" size="51" />
+        </div>
+   
         <div class="grid-container" id="dgrid">
             <div class='heading'>Particulars</div>
             <div class='heading'>Quantity</div>
@@ -85,9 +96,9 @@
             <div class="num" id="c3" onmouseover="chcolor(this,0)" onclick="mkEditable(this)" onmouseout="chcolor(this,1)" >1100</div>
             <div class="num" id="c4"></div>
             <div class="num" id="d1"><input id="b1" style="font-size:150%;color:red;" type="button" value ="X" onclick="delRow(1)"/></div>
- 
+
         </div>
-    </div>
+    </div> 
     <script src="billGrid.js"></script>
     <script src="classes.js"></script>
 </body>

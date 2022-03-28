@@ -16,8 +16,9 @@ class Bill{
     ttype;
     cname;
     billItems = [];
-    constructor(bdate,ttype,cname){
+    constructor(bdate,billno,ttype,cname){
         this.bdate = bdate;
+        this.billno = billno;
         this.ttype = ttype;
         this.cname = cname;
     };

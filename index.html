@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Billing</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="o-container">
+            <div class="header">
+                Header
+            </div>
+            <div class="content">
+                <div class="bill-container top-div ">
+                    
+                    <div class="bill-header">
+                        <input type="date" id="bDate" />
+                        <input type="text" id="billNo" placeholder="Bill Number" size="10" />
+                        <input type="text" class="cash-color" size="5" value="Cash" id="ttype" onkeydown="chk(this,event)"/>
+                        <br>
+                        <input type="text" id="cName" placeholder="Customer Name" size="53" />
+                    </div>
+                    <div class="grid-container">
+                        <div class="grid-header">
+                            <div class='heading'>Particulars</div>
+                            <div class='heading'>Quantity</div>
+                            <div class='heading'>Rate</div>
+                            <div class='heading'>Amount</div>
+                            <div class='heading'>Action</div>
+                
+                        </div>
+                        <div id="dgrid" class="grid-details">
+                            <div class="item" id="c1" onmouseover="chcolor(this,0)" onclick="mkEditable(this)" onmouseout="chcolor(this,1)" >Shirt</div>
+                            <div class="num" id="c2" onmouseover="chcolor(this,0)" onclick="mkEditable(this)" onmouseout="chcolor(this,1)" >2</div>
+                            <div class="num" id="c3" onmouseover="chcolor(this,0)" onclick="mkEditable(this)" onmouseout="chcolor(this,1)" >1100</div>
+                            <div class="num" id="c4"></div>
+                            <div class="num" id="d1"><input id="b1" style="font-size:100%;color:red;" type="button" value ="X" onclick="delRow(1)"/></div>
+                   <!----         <div class="item" id="c5" onmouseover="chcolor(this,0)" onclick="mkEditable(this)" onmouseout="chcolor(this,1)" >Shirt</div>
+                            <div class="num" id="c6" onmouseover="chcolor(this,0)" onclick="mkEditable(this)" onmouseout="chcolor(this,1)" >2</div>
+                            <div class="num" id="c7" onmouseover="chcolor(this,0)" onclick="mkEditable(this)" onmouseout="chcolor(this,1)" >1100</div>
+                            <div class="num" id="c8"></div>
+                            <div class="num" id="d2"><input id="b2" style="font-size:100%;color:red;" type="button" value ="X" onclick="delRow(1)"/></div> -->
+                                            
+                        </div>
+                    </div>
+                </div>
+                <div class="billList">
+                    list container
+                </div>
+            </div>
+            <div class="footer">
+                footer
+            </div>
+        </div>
+        <script src="classes.js" async defer></script>
+        <script src="billGrid.js" async defer></script>
+        <script src="crud.js" async defer></script>
+    </body>
+</html>
