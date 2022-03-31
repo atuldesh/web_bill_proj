@@ -1,8 +1,16 @@
 body {
     margin:0;
-    font-size: 1.2em;
+    font-size: 1.5em;
+    }
+    
+@media(max-width:500px){
+    body {
+    margin:0;
+    font-size: 1.5em;
+    }
     
 }
+
 .o-container {
     width:100vw;
     height:100vh;
@@ -13,21 +21,22 @@ body {
     background-color: darkslategray;
 }
 .header {
+
     background-color: blueviolet;
-    font-size:xx-large;
+    font-size:2rem;
     color:white;
     padding: 2vmin;
-}
+    }
 .footer {
     background-color: black;
-    font-size:x-large;
+    font-size:2rem;
     color:white;
     padding:2vmin;
     
 }
 .content {
     background-color: #a0bed6;
-    position:relative;
+ /*   position:relative;*/
     overflow: auto;
 }
 .top-div {
@@ -35,11 +44,11 @@ body {
 }
 .bill-container {
     display:grid;
-    position: absolute;
+ /*   position: absolute;*/
     grid-template-rows: auto 1fr;
     background-color: burlywood;
     min-width: 70%;
-    max-width: 70%;
+  /*  max-width: 70%;*/
     min-height: 100%;
     left :0%;
     float:left;
@@ -51,7 +60,7 @@ body {
     margin : 0 0;
     top:0;
     padding:2vmin;
-    font-size:2rem;
+    font-size:1rem;
 }
 .grid-container {
    max-width:850px;
@@ -59,32 +68,58 @@ body {
  display:grid;
  grid-template-rows: auto 1fr;
  padding-left: 2vmin;
- 
 }
 .grid-header {
     display:grid;
     grid-template-columns: 39% 15% 15% 20% 10%;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 1ch;
+    padding-bottom:0ch;
+    gap:1px;
+}
+.grid-details {
+    display:grid;
+    grid-template-columns: 39% 15% 15% 20% 10%;
+    gap:1px;
+    grid-auto-rows: 3ch;
+    font-size: 1rem;
+ /*   max-height: 70%;*/
+    overflow-y: auto;
+}
+/*
+@media(max-width:500px){
+.grid-header {
+    display:grid;
+    grid-template-columns: 61%  25% 13%;
+    font-size: 1rem;
     font-weight: bold;
     text-align: center;
     padding-top: 1ch;
     padding-bottom:0ch;
     gap:1px;
 } 
+
 .grid-details {
     display:grid;
-    grid-template-columns: 39% 15% 15% 20% 10%;
+    grid-template-columns: 61%  25% 13%;
     gap:1px;
     grid-auto-rows: 3ch;
- /*   max-height: 70%;*/
+    font-size: 1rem;
+    max-height: 70%;
     overflow-y: auto;
-    
 }
+} */
 .grid-header>div {
     background-color: rgb(93, 151, 228);
     padding: 0.5ch;
     max-height: 3ch;
     top:0;
+}
+@media(max-width:500px){
+    .grid-header>div {
+        padding-left: 0.2ch;}
 }
 .grid-details>div {
     background-color:rgb(124, 172, 236);
@@ -94,9 +129,9 @@ body {
 
 }
 .bill-header > input {
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding: 1vh 0.6vw;
-    margin: 1vh 4vw 1vh 1vw;
+    margin: 1vh 1vw 1vh 1vw;
 /*        background-color: rgb(220, 226, 238);*/
 }
 .num {
@@ -113,8 +148,8 @@ body {
     background-color: aquamarine;
   /*  visibility: hidden;*/
     position: absolute;
-    min-width: 70%;
-    max-width: 70%;
+    min-width: 100%;
+    max-width: 100%;
     min-height: 100%;
     left: 30%;
 }
