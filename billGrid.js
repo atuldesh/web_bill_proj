@@ -14,6 +14,8 @@ let l=itemsList.length;
   let qtyInput = '<input type="number" style="width:'+iw2+';height:'+ih1+';" id="qty" onkeydown="chkKey(this,event)" onblur="mkNonEditable(this)" style="border-style: none;"/>';
   let  rateInput = '<input type="number" style="width:'+iw2+';height:'+ih1+';" id="rate" onkeydown="chkKey(this,event)" onblur="mkNonEditable(this)"/>';
 
+  window.addEventListener("resize", displayWindowSize);
+
 function chcolor(c,n){
     if(n==0) {
         c.style.backgroundColor = "#FFAAFF";
@@ -177,6 +179,8 @@ function delRow(rno){
             (document.getElementById('c'+(rno*4+2))).remove();
             (document.getElementById('c'+(rno*4+3))).remove();
             (document.getElementById('c'+(rno*4+4))).remove();
+            (document.getElementById('card'+(rno+1))).remove();
+
         }
         for(i=1;i<brows.length;i++){
             if(brows[i]==rno+1){
@@ -193,37 +197,47 @@ function addRow(){
     let id2="c"+((rno*4)+2);
     let id3="c"+((rno*4)+3);
     let id4="c"+((rno*4)+4);
-    let g =document.getElementById('dgrid');
+
+    let cid = "card" + (rno+1);
+    let cdiv = document.createElement('div');
+    cdiv.id = cid;
+    cdiv.classList.add('rowCard');
+
     let ncol=document.createElement('div');
     ncol.classList.add('item');ncol.id=id1;
     ncol.addEventListener('mouseover',function(){chcolor(ncol,0)});
     ncol.addEventListener('mouseout',function(){chcolor(ncol,1)});
     ncol.addEventListener('click',function(){mkEditable(ncol)});
-    g.appendChild(ncol);
+    ncol.innerHTML="Item"
+    cdiv.appendChild(ncol);
     let ncol1=document.createElement('div');
-    ncol1.classList.add('num');ncol1.id=id2;
+    ncol1.classList.add('qty');ncol1.id=id2;
     ncol1.addEventListener('mouseover',function(){chcolor(ncol1,0)});
     ncol1.addEventListener('mouseout',function(){chcolor(ncol1,1)});
     ncol1.addEventListener('click',function(){mkEditable(ncol1)});
-    g.appendChild(ncol1);
+    ncol1.innerHTML="Quantity";
+    cdiv.appendChild(ncol1);
     let ncol2=document.createElement('div');
-    ncol2.classList.add('num');ncol2.id=id3;
+    ncol2.classList.add('rate');ncol2.id=id3;
     ncol2.addEventListener('mouseover',function(){chcolor(ncol2,0)});
     ncol2.addEventListener('mouseout',function(){chcolor(ncol2,1)});
     ncol2.addEventListener('click',function(){mkEditable(ncol2)});
-    g.appendChild(ncol2);
+    ncol2.innerHTML = "Rate";
+    cdiv.appendChild(ncol2);
     let ncol3=document.createElement('div');
-    ncol3.id=id4;ncol3.classList.add('num');
-    g.appendChild(ncol3);
+    ncol3.id=id4;ncol3.classList.add('amount');
+    ncol3.innerHTML='Amount';
+    cdiv.appendChild(ncol3);
 
     let id5="d"+(rno+1);
     brows.push(rno+1);
     let ncol4=document.createElement('div');
-    ncol4.id=id5;ncol4.classList.add('num');
+    ncol4.id=id5;ncol4.classList.add('del');
     ncol4.innerHTML="X";
-    let delButton = '<input id="b'+(rno+1)+'" style="font-size:100%;color:red;" type="button" value ="X" onclick="delRow('+(rno+1)+')"/>';
+    let delButton = '<input id="b'+(rno+1)+'" class="delBtn" type="button" value ="X" onclick="delRow('+(rno+1)+')"/>';
 
     ncol4.innerHTML=delButton;
-    g.appendChild(ncol4);
-
+    cdiv.appendChild(ncol4);
+    let g =document.getElementById('dgrid');
+    g.appendChild(cdiv);
     }

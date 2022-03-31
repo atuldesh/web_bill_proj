@@ -7,6 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="phoneCss.css">
     </head>
     <body>
         <div class="o-container">
@@ -33,11 +34,13 @@
                 
                         </div>
                         <div id="dgrid" class="grid-details">
-                            <div class="item" id="c1" onmouseover="chcolor(this,0)" onclick="mkEditable(this)" onmouseout="chcolor(this,1)" >Shirt</div>
-                            <div class="num" id="c2" onmouseover="chcolor(this,0)" onclick="mkEditable(this)" onmouseout="chcolor(this,1)" >2</div>
-                            <div class="num" id="c3" onmouseover="chcolor(this,0)" onclick="mkEditable(this)" onmouseout="chcolor(this,1)" >1100</div>
-                            <div class="num" id="c4"></div>
-                            <div class="num" id="d1"><input id="b1" style="font-size:100%;color:red;" type="button" value ="X" onclick="delRow(1)"/></div>
+                            <div id="card1" class="rowCard">
+                                <div class="item" id="c1" onmouseover="chcolor(this,0)" onclick="mkEditable(this)" onmouseout="chcolor(this,1)" >Item</div>
+                                <div class="qty" id="c2" onmouseover="chcolor(this,0)" onclick="mkEditable(this)" onmouseout="chcolor(this,1)" >Quantity</div>
+                                <div class="rate" id="c3" onmouseover="chcolor(this,0)" onclick="mkEditable(this)" onmouseout="chcolor(this,1)" >Rate</div>
+                                <div class="amount" id="c4">Amount</div>
+                                <div class="del" id="d1"><input id="b1" class="delBtn" type="button" value ="X" onclick="delRow(1)"/></div>
+                            </div>
                         </div>
                     </div>
                 </div>

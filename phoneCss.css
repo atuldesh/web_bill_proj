@@ -1,0 +1,74 @@
+@media(max-width:500px){
+body {
+    margin:0;
+    font-size: 1em;
+    }
+ 
+.grid-header {
+    visibility: hidden;
+}
+.grid-details {
+    margin-top: -3.5vh;
+    display:grid;
+    grid-auto-rows: 4vh;
+    gap:2px;
+    font-size: 1rem;
+    overflow-y: auto;
+}
+
+.rowCard{
+    display:grid;
+    font-size: 1rem;
+    grid-template-columns: auto auto auto auto;
+    background-color: rgb(204, 216, 240);
+    gap:1px;
+    padding: 1vh 0 1vh 0;
+    font-size: 1rem;
+ 
+}
+.qty {
+    text-align:center;
+    padding-right:2ch;
+    grid-area: 2 / 1 / span 1 / span 1;
+    
+}
+ .rate {
+    text-align:center;
+    padding-right:2ch;
+    grid-area: rate;
+    min-height: 2ch;
+    grid-area: 2 / 2 / span 1 / span 1;
+}
+.amount {
+    text-align:center;
+    padding-right:2ch;
+    grid-area: amount;
+    min-height: 2ch;
+    grid-area: 2 / 3 / span 1 / span 2;
+
+}
+
+.del {
+    text-align: center;
+    padding-left: 1ch;
+    padding-right: 1ch;
+    grid-area: 1 / 4 / span 1 / span 1;
+
+     
+}
+.item {
+    text-align: left;
+    padding-left: 1ch;
+    grid-area:1 / 1 / span 1 / span 3;
+}
+.delBtn {
+    font-size:100%;
+    color:red;
+    grid-area:del;
+}
+
+.grid-header>div {
+    padding-left: 0.2ch;
+}
+   
+}
