@@ -10,11 +10,11 @@ let l=itemsList.length;
    let iw2=(document.getElementById('c2').offsetWidth-8) +"px";
     let ih1=(document.getElementById('c1').offsetHeight-8) +"px";
 //       alert(iw1+','+iw2)
-    let itemInput='<input list = "items" style="width:'+iw1+';height:'+ih1+';" id="item" onkeydown="chkKey(this,event)" onblur="mkNonEditable(this)" ><datalist id="items">'+optlist+' </datalist>';
-  let qtyInput = '<input type="number" style="width:'+iw2+';height:'+ih1+';" id="qty" onkeydown="chkKey(this,event)" onblur="mkNonEditable(this)" style="border-style: none;"/>';
-  let  rateInput = '<input type="number" style="width:'+iw2+';height:'+ih1+';" id="rate" onkeydown="chkKey(this,event)" onblur="mkNonEditable(this)"/>';
+    let itemInput='<input placeholder="Select Item" list = "items" style="width:'+iw1+';height:'+ih1+';" id="item" onkeydown="chkKey(this,event)" onblur="mkNonEditable(this)" ><datalist id="items">'+optlist+' </datalist>';
+  let qtyInput = '<input placeholder="Quantity" type="number" style="width:'+iw2+';height:'+ih1+';" id="qty" onkeydown="chkKey(this,event)" onblur="mkNonEditable(this)" style="border-style: none;"/>';
+  let  rateInput = '<input type="number" placeholder="Rate" style="width:'+iw2+';height:'+ih1+';" id="rate" onkeydown="chkKey(this,event)" onblur="mkNonEditable(this)"/>';
 
-  window.addEventListener("resize", displayWindowSize);
+ // window.addEventListener("resize", displayWindowSize);
 
 function chcolor(c,n){
     if(n==0) {
@@ -208,21 +208,21 @@ function addRow(){
     ncol.addEventListener('mouseover',function(){chcolor(ncol,0)});
     ncol.addEventListener('mouseout',function(){chcolor(ncol,1)});
     ncol.addEventListener('click',function(){mkEditable(ncol)});
-    ncol.innerHTML="Item"
+ //   ncol.innerHTML="Item"
     cdiv.appendChild(ncol);
     let ncol1=document.createElement('div');
     ncol1.classList.add('qty');ncol1.id=id2;
     ncol1.addEventListener('mouseover',function(){chcolor(ncol1,0)});
     ncol1.addEventListener('mouseout',function(){chcolor(ncol1,1)});
     ncol1.addEventListener('click',function(){mkEditable(ncol1)});
-    ncol1.innerHTML="Quantity";
+ //   ncol1.innerHTML="Quantity";
     cdiv.appendChild(ncol1);
     let ncol2=document.createElement('div');
     ncol2.classList.add('rate');ncol2.id=id3;
     ncol2.addEventListener('mouseover',function(){chcolor(ncol2,0)});
     ncol2.addEventListener('mouseout',function(){chcolor(ncol2,1)});
     ncol2.addEventListener('click',function(){mkEditable(ncol2)});
-    ncol2.innerHTML = "Rate";
+ //   ncol2.innerHTML = "Rate";
     cdiv.appendChild(ncol2);
     let ncol3=document.createElement('div');
     ncol3.id=id4;ncol3.classList.add('amount');

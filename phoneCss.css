@@ -9,27 +9,44 @@ body {
 }
 .grid-details {
     margin-top: -3.5vh;
+    margin-bottom:1ch;
+    margin-right: 0.5ch;
     display:grid;
-    grid-auto-rows: 4vh;
-    gap:2px;
+    grid-auto-rows: 8vh;
+    gap:5ch;
     font-size: 1rem;
-    overflow-y: auto;
+    width: 97%;
+    padding: 0 1.5vw 2vh 1.5vw;
+     overflow-y: auto;
 }
 
 .rowCard{
     display:grid;
     font-size: 1rem;
-    grid-template-columns: auto auto auto auto;
+    height: 8vh;
+    grid-template-columns: auto auto auto 10% ;
+    grid-template-rows: auto auto;
+    grid-template-areas : "it it it de" "qt ra amt de";
     background-color: rgb(204, 216, 240);
-    gap:1px;
-    padding: 1vh 0 1vh 0;
+    border-radius: 1ch;
+    border: 1px solid black;
     font-size: 1rem;
+    padding-bottom: 2ch;
+    padding-top:1ch;
+    row-gap:1px;
  
+}
+.rowCard > div {
+    padding : 0px 0 1px 0;
+    min-height: 3ch;
+    font-size: 120%;
+    vertical-align: middle;
+    text-align: center;
 }
 .qty {
     text-align:center;
     padding-right:2ch;
-    grid-area: 2 / 1 / span 1 / span 1;
+    grid-area:qt;
     
 }
  .rate {
@@ -37,38 +54,30 @@ body {
     padding-right:2ch;
     grid-area: rate;
     min-height: 2ch;
-    grid-area: 2 / 2 / span 1 / span 1;
+    grid-area:ra;
 }
 .amount {
     text-align:center;
     padding-right:2ch;
     grid-area: amount;
     min-height: 2ch;
-    grid-area: 2 / 3 / span 1 / span 2;
-
+    grid-area:amt;
+ 
 }
 
 .del {
-    text-align: center;
-    padding-left: 1ch;
-    padding-right: 1ch;
-    grid-area: 1 / 4 / span 1 / span 1;
-
-     
+    grid-area:de;
 }
 .item {
     text-align: left;
     padding-left: 1ch;
-    grid-area:1 / 1 / span 1 / span 3;
+    grid-area:it;
 }
 .delBtn {
     font-size:100%;
     color:red;
-    grid-area:del;
-}
-
-.grid-header>div {
-    padding-left: 0.2ch;
+    height: 3vh;
+    width: 4vh;
 }
    
 }
