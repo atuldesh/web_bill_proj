@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        td {
+            width: 10ch;
+            text-align: center;
+            font-size: 120%;
+        }
+        input {
+            background-color: aqua;
+            font-size: 120%;
+        }
+    </style>
+    <script>
+        let names = ['Ram','sham','ramesh','geeta'];
+        let subs = ['lang','maths','science','so.sc.','sports'];
+    </script>
+</head>
+<body>
+    <table id="tbl" border="1" style="border-collapse: collapse;">
+        <tr>
+            <th rowspan="2">Name</th>
+            <th colspan="5">Subjects==></th>
+            <th rowspan="2">Total</th><th rowspan="2">Result</th>
+        </tr>
+    
+    </table>
+    <script>
+        inputst = '<input type="Number" width="100%" onblur="putVal(this)" id="num" />';
+    
+        function $(id) {return document.getElementById(id);}
+        function putVal(iBox){
+            ibox.parent.innerHTML = ibox.value;
+            
+        }
+        function mkeditable(col){
+            col.innerHTML = inputst;
+            $('num').focus();
+
+        }
+    function fn2(c){
+        c.addEventListener("click",function(){mkeditable(c);});
+    }
+    function fn1(r){
+        r.forEach(fn2);
+    }
+
+    t = $("tbl");
+    let r= t.insertRow();
+    for(i=0;i<subs.length;i++)
+    {
+        c = r.insertCell();c.innerHTML=subs[i];
+    }
+    for(i=0;i<names.length;i++)
+    {
+         r= t.insertRow();
+         c = r.insertCell();
+        c.innerHTML = names[i];
+        for(j=0;j<subs.length;j++){
+            c = r.insertCell();
+            c.addEventListener("click",function(){mkeditable(c);});
+        
+        }
+    }
+    rs = t.rows;
+    rs.forEach(fn1);
+    </script>
+</body>
+</html>
