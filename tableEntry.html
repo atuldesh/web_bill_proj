@@ -9,7 +9,7 @@
         }
         input {
             background-color: aqua;
-            font-size: 120%;
+            font-size: 100%
         }
     </style>
     <script>
@@ -27,44 +27,74 @@
     
     </table>
     <script>
-        inputst = '<input type="Number" width="100%" onblur="putVal(this)" id="num" />';
+        t = $("tbl");
+        inputst = '<input type="Number" onkeydown="chkKey(this,event)" onblur="putVal(this)" id="num" />';
     
         function $(id) {return document.getElementById(id);}
-        function putVal(iBox){
-            ibox.parent.innerHTML = ibox.value;
+        function putVal(ibox){
+            try {
+              ibox.parentElement.innerHTML = ibox.value;
+            } catch(e){};
             
         }
-        function mkeditable(col){
+        function mkEditable(col){
+            vs = col.offsetWidth + "px";
+            n = col.innerHTML
             col.innerHTML = inputst;
+            $('num').style.width=vs;
+            $('num').value=n;
             $('num').focus();
+        }
+        function chkKey(ibox,e){
+            cno= ibox.parentElement.cellIndex;
+            rno = ibox.parentElement.parentElement.rowIndex;
+//            console.log("cno:"+cno+" rno:"+rno);
+            if(e.key=='Enter'){
+//                console.log("A");
+                putVal(ibox);
+                if(cno<subs.length){
+                    col = t.rows[rno].cells[cno+1];
+                } else if(rno<names.length+1){
+                    col = t.rows[rno+1].cells[1];
+                }
+ //               console.log(col.cellIndex);
+                mkEditable(col);
+                e.preventDefault();
+            }else if(e.key=='Escape'){
+                putVal(ibox);
+                if(cno>1){
+                    col= t.rows[rno].cells[cno-1];
+                } else if(rno>2){
+                    col = t.rows[rno-1].cells[subs.length];
+                }
+                mkEditable(col);
+                e.preventDefault();
+
+            }
 
         }
-    function fn2(c){
-        c.addEventListener("click",function(){mkeditable(c);});
-    }
-    function fn1(r){
-        r.forEach(fn2);
-    }
 
-    t = $("tbl");
-    let r= t.insertRow();
-    for(i=0;i<subs.length;i++)
-    {
-        c = r.insertCell();c.innerHTML=subs[i];
+
+     let r= t.insertRow();
+    function addSubject(item){
+        c=r.insertCell();c.innerHTML=item;
     }
-    for(i=0;i<names.length;i++)
-    {
-         r= t.insertRow();
-         c = r.insertCell();
-        c.innerHTML = names[i];
-        for(j=0;j<subs.length;j++){
-            c = r.insertCell();
-            c.addEventListener("click",function(){mkeditable(c);});
-        
-        }
+    function addEvent(col) {
+        col.addEventListener("click",function(){mkEditable(col);});
     }
-    rs = t.rows;
-    rs.forEach(fn1);
+    function addName(item) {
+        r= t.insertRow();
+        c = r.insertCell();
+       c.innerHTML = item;
+       subs.forEach(function () {
+           c=r.insertCell();
+           addEvent(c);
+       });
+       r.insertCell();r.insertCell();
+
+    }
+    subs.forEach(addSubject);
+    names.forEach(addName);
     </script>
 </body>
 </html>
