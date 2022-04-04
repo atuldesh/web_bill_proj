@@ -128,7 +128,7 @@ body {
 }
 .billList {
     background-color: rgb(219, 241, 234);
-  /*  visibility: hidden;*/
+    visibility: hidden;
     position: absolute;
     min-width:50%;
      max-width: 70%;
