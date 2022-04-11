@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="mlistgrid.css">
+    <script src="mlistgrid.js"></script>
+</head>
+<body>
+ <div class="o-container">
+    <div class="header">
+         Final Examination
+    </div>
+
+    <div class="t-container">
+        <div id="t-header" class="t-header">
+            <div class="rno">Roll No.</div>
+            <div class="name">Student Name</div>
+            <div class="stOfMarks">
+                <span style="float:left;">Statement of Marks ==></span>
+                <span style="float:right;">
+                    <input type="button" class="addButton" value="Add New Row" onclick="" />
+                </span>
+            </div>
+            <div class="del">Action</div>
+        </div>
+        <div id="t-dtlArea" class="t-dtlArea">
+        </div>
+    </div>
+    <div class="summary">
+        Summary
+    </div>   
+
+ </div>
+ <script>
+    titleLine.forEach(function (item,index) {
+        let d = document.createElement('div');
+        d.classList.add('subLine');
+        d.innerHTML = item;
+        $('t-header').appendChild(d);
+    });
+    students.forEach(function (stud) {
+        addNewRow(stud);
+
+    });
+ </script>
+</body>
+</html>

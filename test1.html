@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="a1">
+            <div>a2</div>
+            <div>a2</div>
+            <div>a2</div>
+            <div>a2</div>
+        </div>
+        <input type="button" onclick="change()" value="change" />
+    </body>
+    <script>
+        function change(){
+            let ch = document.getElementById('a1').children;
+            console.log(ch.length);
+            for(a of ch){
+                a.innerHTML="done" ;
+            }
+//            console.log(ch[0].innerHTML);
+        }
+    </script>
+</html>

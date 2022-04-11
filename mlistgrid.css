@@ -1,0 +1,174 @@
+body {
+    margin: 0;
+}
+.o-container{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    width: 100vw;
+    height: 100vh;
+}
+.header {
+    background-color: darkblue;
+    color : white;
+    font-size:4rem;
+    font-weight: bold;
+    padding: 1vh 2vw 1vh 4vw;
+}
+.summary {
+    background-color: darkblue;
+    color : white;
+    padding: 1vh 2vw 1vh 2vw;
+    font-size:1.3rem;
+}
+.t-container {
+    display:grid;
+    grid-template-rows: auto 1fr;
+    padding: 1vw;
+}
+.t-header {
+    display:grid;
+    gap:2px;
+    grid-template-columns: 8% 25% repeat(9,7%) ;
+    padding-bottom: 1px;
+}
+.t-header >div {
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: rgb(135, 181, 222);
+
+}
+.addButton {
+    color:white;font-size:large;background-Color:rgb(13, 104, 240);font-weight: bold;
+}
+.stOfMarks {
+    grid-area : 1 / 3 / span 1 / span 8;
+    padding: 0.5ch;
+}
+.del {
+    grid-area : 1 / 11 / span 2 / span 1;
+    padding: 1.5ch;
+
+}
+.subLine {
+    padding: 0.5ch;
+}
+.rno {
+    grid-area : 1 / 1 /  span 2 /  span 1;
+    padding-top: 1.5ch;
+}
+.name {
+     grid-area : 1 / 2 / span 2 / span 1;
+      padding-top: 1.5ch;
+}
+.t-dtlArea {
+    display:grid;
+    grid-auto-rows: 4vh;
+    float:top;
+    gap : 1px;
+    overflow: auto;
+ 
+}
+
+.t-dtlRow {
+    display:grid;
+    gap:2px;
+    grid-template-columns: 8% 25% repeat(9,7%);
+ /*   grid-template-rows: "rno nam sub1 sub2 sub3 sub4 tot per res gr act";*/
+}
+.t-dtlRow > div {
+    text-align: center;
+    padding-top: 1vh;
+    background-color: rgb(144, 175, 237);
+}
+
+.t-dtlRow > div >.title {
+    visibility: hidden;
+}
+
+/* for small screens */
+
+@media(max-width:1000px){
+
+    .a1 {grid-area:rno;}
+    .a2 {grid-area:nam;}
+    .a3 {grid-area:sub1;}
+    .a4 {grid-area:sub2;}
+    .a5 {grid-area:sub3;}
+    .a6 {grid-area:sub4;}
+    .a7 {grid-area:tot;}
+    .a8 {grid-area:per;}
+    .a9 {grid-area:res;}
+    .a10 {grid-area:gr;}
+    .a11 {grid-area:act;}
+
+    .t-header {
+        display:grid;
+        gap:2px;
+        grid-template-columns: 8% 25% repeat(9,7%) ;
+        padding-bottom: 1px;
+    }
+    .t-header >div {
+        font-size: 1.5rem;
+        background-color: rgb(135, 181, 222);
+    
+    }
+    
+    .stOfMarks {
+        grid-area : 1 / 1 / span 1 / span 12;
+        padding: 0.5ch;
+    }
+    .del {
+        grid-area : 1 / 11 / span 2 / span 1;
+        padding: 2ch;
+        visibility: hidden;
+    
+    }
+    .subLine {
+        padding: 0.5ch;
+        visibility: hidden;
+    }
+    .rno {
+        grid-area : 1 / 1 /  span 2 /  span 1;
+        padding-top: 2ch;
+        visibility: hidden;
+    }
+    .name {
+         grid-area : 1 / 2 / span 2 / span 1;
+          padding-top: 2ch;
+          visibility: hidden;
+        }
+    .t-dtlArea {
+        display:grid;
+        grid-auto-rows: 12vh;
+        padding-bottom: 2vh;
+        margin-top: -5ch;
+        gap : 1px;
+        overflow: auto;
+        
+    }
+    .t-dtlRow {
+        display:grid;
+        gap:2px;
+        border-radius: 2ch;
+        border-color: blue;
+        border-style: solid;
+        grid-template-columns: repeat(4,23%) 8%;
+        grid-auto-rows: auto;
+        grid-template-areas: "rno nam nam nam act"
+                            "sub1 sub2 sub3 sub4 act"
+                            "tot per res gr act";
+     
+    }
+    .t-dtlRow > div {
+        text-align: center;
+        height: auto;
+        padding-top: 1vh;
+        font-size:1.4rem;
+        background-color: rgb(144, 175, 237);
+    }
+    .t-dtlRow > div >.title {
+        
+        color:rgb(65, 6, 242);
+        visibility: visible;
+    }
+}

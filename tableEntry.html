@@ -15,21 +15,8 @@
     <script>
         let names = ['Ram','sham','ramesh','geeta'];
         let subs = ['lang','maths','science','so.sc.','sports'];
-    </script>
-</head>
-<body>
-    <table id="tbl" border="1" style="border-collapse: collapse;">
-        <tr>
-            <th rowspan="2">Name</th>
-            <th colspan="5">Subjects==></th>
-            <th rowspan="2">Total</th><th rowspan="2">Result</th>
-        </tr>
-    
-    </table>
-    <script>
-        t = $("tbl");
         inputst = '<input type="Number" onkeydown="chkKey(this,event)" onblur="putVal(this)" id="num" />';
-    
+ 
         function $(id) {return document.getElementById(id);}
         function putVal(ibox){
             try {
@@ -73,12 +60,6 @@
             }
 
         }
-
-
-     let r= t.insertRow();
-    function addSubject(item){
-        c=r.insertCell();c.innerHTML=item;
-    }
     function addEvent(col) {
         col.addEventListener("click",function(){mkEditable(col);});
     }
@@ -93,6 +74,28 @@
        r.insertCell();r.insertCell();
 
     }
+         
+    </script>
+</head>
+<body>
+    <table id="tbl" border="1" style="border-collapse: collapse;">
+        <tr>
+            <th rowspan="2">Name</th>
+            <th colspan="5">Subjects==>
+                <span style="float: right;"><input type="button" value="Calc" onclick="calc()"></span>
+             </th>
+            <th rowspan="2">Total</th><th rowspan="2">Result</th>
+        </tr>
+    
+    </table>
+    <script>
+        t = $("tbl");
+        let r= t.insertRow();
+   
+        function addSubject(item){
+           c=r.insertCell();c.innerHTML=item;
+       }
+       
     subs.forEach(addSubject);
     names.forEach(addName);
     </script>
