@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            tr {
+                height:5ch;
+            }
+            td, th {
+                font-size: large;
+                text-align: center;
+            }
+            th {
+                background-color: bisque;
+            }
+            .noedit{
+                background-color: antiquewhite;
+            }
+            .edittable{
+                background-color: rgb(214, 247, 247);
+
+            }
+        </style>
+        <script>
+            function editIt(col){
+                col.contentEditable = true;
+                col.className="edittable";
+            }
+            function mkNonEditable(col,e) {
+                e.preventDefault();
+                col.className="noedit";
+                col.contentEditable=false;
+                col1=col.nextSibling;
+                if(col1) {editIt(col1);} else {col1=col.previousSibling;editIt(col1);}
+            }
+        </script>
+    </head>
+
+    <body>
+        <table  width="50%" border="1" style= "border-collapse:collapse;">
+            <tr>
+                <th width="70%">Name</th><th width="30%">Marks</th>
+            </tr>
+            <tr>
+                <td onclick="editIt(this)" class="noedit" onblur="mkNonEditable(this,event)"></td>>
+                <td onclick="editIt(this)" class="noedit" onblur="mkNonEditable(this,event)"></td>>
+            </tr>
+            <tr>
+                <td onclick="editIt(this)" class="noedit" onblur="mkNonEditable(this,event)"></td>>
+                <td onclick="editIt(this)" class="noedit" onblur="mkNonEditable(this,event)"></td>>
+            </tr>
+            <tr>
+                <td onclick="editIt(this)" class="noedit" onblur="mkNonEditable(this,event)"></td>>
+                <td onclick="editIt(this)" class="noedit" onblur="mkNonEditable(this,event)"></td>>
+            </tr>
+        </table>
+    </body>
+    </html>

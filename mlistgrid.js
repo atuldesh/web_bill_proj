@@ -60,17 +60,40 @@ function $(id){
 }
 
 function mkEditable(col,n){
-    let data = col.innerHTML;
+    let element = col.children[1];
+    let data = element.innerHTML;
+    let capt = col.children[0].innerHTML;
+    col.style.padding="2px";
 
-    if(n==2){
-        let inputtxt = '<input type="text" onkeydown="chkKey(this,event)" onblur="putVal(this,'+n+')" id="ibox" value='+data+' />';
+    let vs = col.offsetWidth-20 + "px";
+    let vh = col.offsetHeight-10 + "px";
+     if(n==1){
+        let inputtxt = '<input type="text" onkeydown="chkKey(this,event)" onblur="pmkNonEditable(this,'+n+')" id="ibox" placeholder="'+capt+'"/>';
         col.innerHTML = inputtxt;
     } else {
-        let inputnum = '<input type="Number" onkeydown="chkKey(this,event)" onblur="putVal(this,'+n+')" id="num" value='+data+' />';
+        let inputnum = '<input type="Number" onkeydown="chkKey(this,event)" onblur="mkNonEditable(this,'+n+')" id="ibox"  placeholder="'+capt+'" />';
         col.innerHTML = inputnum;
     }
+    $('ibox').style.height=vh;
+    $('ibox').style.width=vs;
+    $('ibox').value = data;
+    $('ibox').focus();
 }
+function mkNonEditable(col,n) {
+    
+    if(n<2) {
+        v = stud[item];
+        t = item;
 
+   } else {
+       v = stud[item].obtMarks;
+       t = stud[item].sname;
+   }
+
+}
+function setCol(col,n){
+
+}
 function addNewRow(stud){
     let d = $('t-dtlArea');
     r = document.createElement('div');
@@ -90,8 +113,8 @@ function addNewRow(stud){
             v = stud[item].obtMarks;
             t = stud[item].sname;
         }
-        col.innerHTML = "<span class='title'>"+t+":</span><span onclick='mkEditable(this,"+n+")' class='data'>" + v + "</span> ";
-        col.addEventListener('click',function(){mkEditable(col,n)});
+        col.innerHTML = "<span class='title'>"+t+":</span><span class='data'>" + v + "</span> ";
+       col.addEventListener('click',function(){mkEditable(col,n)});
         r.appendChild(col);
     
     });

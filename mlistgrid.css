@@ -83,6 +83,11 @@ body {
 
 .t-dtlRow > div >.title {
     visibility: hidden;
+    width:auto;
+}
+.tdtlRow > div >input {
+    font-size: 100%;
+    background-color: aliceblue;
 }
 
 /* for small screens */

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <body style="font-size: 200%;">
+        <div id ="id1"></div>
+        <div contenteditable=true>Let is test it!</div>
+        <script>
+            class Test {
+                a;
+                b;
+                constructor(x,y){
+                    this.a=x;this.b = y;
+                }
+                sum() {
+                    return this.a + this.b;
+                }
+            };
+
+            obj1 = new Test(4,5);
+            obj2 = new Test(8,2);
+            obj3 = new Test(8,2);
+            d = document.getElementById("id1");
+            d.innerHTML = "Sum1 = "+ obj1.sum() + "  sum2 = "+ obj2.sum();
+            obj3.a = 7;
+            d.innerHTML = d.innerHTML + "<br>Sum3 = "+ obj2.sum();
+
+        
+
+        </script>
+    </body>
+</html>

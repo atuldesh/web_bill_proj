@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        td, th {
+            width: 10ch;
+            text-align: center;
+            font-size: 120%;
+        }
+        input {
+            background-color: aqua;
+            font-size: 100%
+        }
+    </style>
+    <script src="tabledata.js"></script>
+    <script src="fns.js"></script>
+ 
+</head>
+<body>
+    <div><input type="button" value="Add Student" onclick="addRow()"/></div>
+    <table id="tbl" border="1" style="border-collapse: collapse;">
+        <tr>
+            <th rowspan="2">Roll.No.</th>
+            <th rowspan="2">Name</th>
+            <th colspan="4">Subjects==></th>
+            <th rowspan="2">Total</th><th rowspan="2">Result</th>
+            <th rowspan="2">%age</th><th rowspan="2">Grade</th>
+            <th rowspan="2">Delete</th>
+        </tr>
+    </table>
+<script>   
+    let t = $("tbl");
+    let r= t.insertRow();
+    arrsubs.forEach(function (item){
+        c=r.insertCell();c.innerHTML=item;
+    });
+    students.forEach(addRow);
+
+ 
+
+</script> 
+</body>
+</html>
